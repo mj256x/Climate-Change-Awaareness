@@ -1,0 +1,145 @@
+:root {
+    --bg-color: #062a46;
+    --nav-footer: #021e33;
+    --text: #eee;
+    --hover-btn: #18415f;
+    --nav-link-border: #e95938;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--bg-color);
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    background-color: var(--nav-footer);
+    padding: 10px 20px;
+    position: sticky;
+    top: 5px;
+    color: var(--text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    cursor: pointer;
+}
+
+.logo {
+    width: 50px;
+}
+
+.navbar-brand-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.navbar-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    width: 100%;
+    padding: 10px 0;
+    border: 2.5px solid transparent;
+    border-radius: 2.5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.active {
+    border-bottom-color: var(--nav-link-border);
+}
+
+.nav-link a {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    text-wrap: nowrap;
+}
+
+.navbar-collapse-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in;
+}
+
+.navbar-collapse-btn:hover {
+    background-color: var(--hover-btn);
+}
+
+.collapsed-navbar {
+    background-color: var(--nav-footer);
+    width: 95%;
+    position: absolute;
+    top: 60px;
+    padding: 15px;
+    display: none;
+}
+
+.collapsed-navbar.show {
+    display: block;
+}
+
+.collapsed-navbar-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media (max-width:768px) {
+    .navbar {
+        border-bottom: 2px solid var(--nav-link-border);
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .collapsed-navbar {
+        width: 90%;
+    }
+}
+
+@media (min-width:769px) {
+
+    .navbar-collapse-btn,
+    .collapsed-navbar {
+        display: none !important;
+    }
+}
