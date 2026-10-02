@@ -18,10 +18,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    gap: 20px;
-    padding: 20px;
     background-color: var(--bg-color);
-    position: relative;
 }
 
 .navbar {
@@ -29,13 +26,12 @@ body {
     background-color: var(--nav-footer);
     padding: 10px 20px;
     position: sticky;
-    top: 5px;
+    top: 0;
     color: var(--text);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-radius: 20px;
 }
 
 .navbar-brand {
@@ -48,12 +44,13 @@ body {
 }
 
 .logo {
-    width: 50px;
+    width: 60px;
 }
 
 .navbar-brand-title {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
 }
 
 .navbar-links {
@@ -102,9 +99,11 @@ body {
 
 .collapsed-navbar {
     background-color: var(--nav-footer);
-    width: 95%;
+    width: 100%;
     position: absolute;
-    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 62px;
     padding: 15px;
     display: none;
 }
@@ -122,6 +121,144 @@ body {
     gap: 10px;
 }
 
+.footer {
+    width: 100%;
+    background-color: var(--nav-footer);
+    color: var(--text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text {
+    margin: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer .logo {
+    margin: 10px;
+}
+
+.footer-img {
+    flex: none;
+    height: auto;
+    width: 60px;
+}
+
+.main-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-image: url(images/c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+.content-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 4rem;
+    color: var(--text);
+}
+
+.content-description {
+    font-family: cursive;
+    font-weight: 450;
+    font-size: 1.25rem;
+    color: var(--text);
+}
+
+.pages-links {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.link-btn-1,
+.link-btn-2 {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    gap: 5px;
+    width: fit-content;
+    height: auto;
+    padding: 14px;
+    margin-bottom: 5px;
+    border-radius: 12px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease-out;
+}
+
+.link-btn-1 {
+    background-color: #e95938;
+    color: aliceblue;
+}
+
+.link-btn-1:hover {
+    background-color: #cc3c1c;
+}
+
+.link-btn-2 {
+    background-color: #38b6ff;
+    color: #062a46;
+}
+
+.link-btn-2:hover {
+    background-color: #1f8fd0;
+}
+
+.content-img {
+    width: 100%;
+}
+
+.content-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.card {
+    width: 100%;
+    height: auto;
+    background-color: rgb(212, 228, 243);
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.card-info {
+    width: 100%;
+}
+
+.card-info strong {
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--nav-footer);
+}
+
+.card-info p {
+    color: var(--nav-footer);
+    font-family: cursive;
+}
+
 @media (max-width:768px) {
     .navbar {
         border-bottom: 2px solid var(--nav-link-border);
@@ -131,8 +268,26 @@ body {
         display: none;
     }
 
-    .collapsed-navbar {
-        width: 90%;
+    .main-content {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/c2.png);
+        background-position: center;
+    }
+
+    .content-cards {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .content-title {
+        font-size: 3rem;
+    }
+
+    .content-description {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        flex-direction: column;
     }
 }
 
@@ -141,5 +296,12 @@ body {
     .navbar-collapse-btn,
     .collapsed-navbar {
         display: none !important;
+    }
+}
+
+@media (min-width:769px) and (max-width:1024px) {
+    .main-content {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/c2.png);
+        background-position: center;
     }
 }
